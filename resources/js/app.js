@@ -1,23 +1,23 @@
 
       new Vue({
-          el: '#crud' ,
+          el: '#crud',
           created: function(){
               this.getKeeps();
           },
           data: {
-               nombres: [],
-               puestos: []
+               keeps: []
+              // puestos: []
           },
-          methods:{
+          methods: {
               getKeeps: function(){
                   var urlKeeps = 'tasks';
-                  axios.get(urlKeeps).then(response =>{
-                      this.nombres = response.data
+                  axios.get(urlKeeps).then(response => {
+                      this.keeps = response.data
                   });
-                  var urlKeepss = 'tasks';
+             /*     var urlKeepss = 'tasks';
                   axios.get(urlKeepss).then(response =>{
                       this.puestos = response.data
-                  });
+                  });  */
               }
           }
       });
